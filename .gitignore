@@ -1,2 +1,3 @@
 /.idea/
 /venv/
+/statistics_collector/db.sqlite3
