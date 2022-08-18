@@ -4,26 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82e8f08d-4ad6-424d-9630-717be13f0104" name="Changes" comment="Start the project">
-      <change afterPath="$PROJECT_DIR$/statistics_collector/collector/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistics_collector/collector/admin.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistics_collector/collector/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistics_collector/collector/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistics_collector/collector/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistics_collector/collector/templates/collector/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistics_collector/collector/templates/collector/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistics_collector/collector/templates/collector/left_menu.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistics_collector/collector/templates/collector/result_table.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistics_collector/collector/tests.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistics_collector/collector/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistics_collector/collector/views.py" afterDir="false" />
+    <list default="true" id="82e8f08d-4ad6-424d-9630-717be13f0104" name="Changes" comment="Start the project with home page">
+      <change afterPath="$PROJECT_DIR$/statistics_collector/collector/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statistics_collector/collector/templates/collector/files_modals.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statistics_collector/collector/templates/collector/table_modals.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statistics_collector/collector/templates/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatisticsCollector.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StatisticsCollector.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collector/collector/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collector/collector/csv_loader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collector/collector/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collector/collector/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collector/collector/templates/collector/left_menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collector/collector/templates/collector/left_menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collector/collector/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collector/collector/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/statistics_collector/statistics_collector/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collector/statistics_collector/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collector/statistics_collector/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collector/statistics_collector/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -56,13 +47,17 @@
     "NewWatcherDialog.advanced.open": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/aleksei-zaichenkov/IdeaProjects/StatisticsCollector/statistics_collector/collector/templates/collector",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "last_opened_file_path": "/home/aleksei-zaichenkov/IdeaProjects/StatisticsCollector/statistics_collector",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PythonContentEntriesConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/statistics_collector/collector/templates/collector" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/statistics_collector" />
+      <recent name="$PROJECT_DIR$/statistics_collector/collector" />
     </key>
   </component>
   <component name="RunManager">
@@ -111,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660724099031</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Start the project with home page">
+      <created>1660820575900</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1660820575900</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -127,6 +129,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Start the project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start the project" />
+    <MESSAGE value="Start the project with home page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start the project with home page" />
   </component>
 </project>

@@ -1,9 +1,23 @@
 {% extends 'collector/base.html' %} {% load widget_tweaks %} {% block content %}
 
 <div class="card">
-<!--  <form method="post"> {% csrf_token %}-->
+  <form method="post"> {% csrf_token %}
+          <button type="button" class="btn-outline-primary" data-toggle="modal" data-target="#download_files_modal">
+            <a href="#">Download files</a>
+          </button>
 
-<!--  </form>-->
+          <button type="button" class="btn-outline-primary" data-toggle="modal" data-target="#set_new_table_options">
+            <a href="#">Create new table</a>
+          </button>
+  </form>
 </div>
+
+{% block result_table %}
+{% include 'collector/files_modals.html' %}
+{% endblock %}
+
+{% block result_table %}
+{% include 'collector/table_modals.html' %}
+{% endblock %}
 
 {% endblock content %}

@@ -1,7 +1,11 @@
 from django.db import models
 
 
-# Create your models here.
+class Platform(models.Model):
+    platform_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=255)
+
+
 class Purchase(models.Model):
     purchase_id = models.AutoField(primary_key=True)
     appsflyer_id = models.CharField(max_length=255)
@@ -11,7 +15,7 @@ class Purchase(models.Model):
 
     campaign = models.CharField(max_length=512)
 
-    platform = models.CharField(max_length=255)
+    platform = models.OneToOneField(Platform, on_delete=models.SET_NULL, null=True)
     media_source = models.CharField(max_length=512)
 
     event_revenue = models.CharField(max_length=255)
@@ -26,7 +30,7 @@ class Install(models.Model):
 
     campaign = models.CharField(max_length=512)
 
-    platform = models.CharField(max_length=255)
+    platform = models.OneToOneField(Platform, on_delete=models.SET_NULL, null=True)
     media_source = models.CharField(max_length=512)
 
     event_revenue = models.CharField(max_length=255)
