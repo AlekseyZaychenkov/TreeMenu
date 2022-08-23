@@ -4,15 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82e8f08d-4ad6-424d-9630-717be13f0104" name="Changes" comment="Start the project with home page">
-      <change afterPath="$PROJECT_DIR$/statistics_collector/collector/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistics_collector/collector/templates/collector/files_modals.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistics_collector/collector/templates/collector/table_modals.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/statistics_collector/collector/templates/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/statistics_collector/collector/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collector/collector/csv_loader.py" afterDir="false" />
+    <list default="true" id="82e8f08d-4ad6-424d-9630-717be13f0104" name="Changes" comment="Created modals and first templates">
+      <change afterPath="$PROJECT_DIR$/statistics_collector/collector/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statistics_collector/prepare_environmental.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statistics_collector/statistics_collector/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/StatisticsCollector.iml" beforeDir="false" afterPath="$PROJECT_DIR$/StatisticsCollector.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collector/collector/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collector/collector/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collector/collector/csv_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collector/collector/csv_loader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collector/collector/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collector/collector/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/statistics_collector/collector/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collector/collector/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collector/collector/templates/collector/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collector/collector/templates/collector/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collector/collector/templates/collector/files_modals.html" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collector/collector/templates/collector/files_modals.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/statistics_collector/collector/templates/collector/left_menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collector/collector/templates/collector/left_menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collector/collector/templates/collector/table_modals.html" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collector/collector/templates/collector/table_modals.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collector/collector/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collector/collector/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/statistics_collector/collector/utils.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/statistics_collector/collector/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collector/collector/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/statistics_collector/statistics_collector/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/statistics_collector/statistics_collector/settings.py" afterDir="false" />
     </list>
@@ -41,26 +49,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "NewWatcherDialog.advanced.open": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/aleksei-zaichenkov/IdeaProjects/StatisticsCollector/statistics_collector",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PythonContentEntriesConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;NewWatcherDialog.advanced.open&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/aleksei-zaichenkov/IdeaProjects/StatisticsCollector/statistics_collector&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PythonContentEntriesConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/statistics_collector" />
       <recent name="$PROJECT_DIR$/statistics_collector/collector/templates/collector" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/statistics_collector" />
       <recent name="$PROJECT_DIR$/statistics_collector/collector" />
+      <recent name="$PROJECT_DIR$/statistics_collector" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.StatisticsCollector">
     <configuration name="StatisticsCollector" type="PythonConfigurationType" factoryName="Python">
       <module name="StatisticsCollector" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -82,6 +91,26 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="prepare_environmental.sh" type="ShConfigurationType" temporary="true">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/statistics_collector/prepare_environmental.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$/statistics_collector" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Shell Script.prepare_environmental.sh" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -113,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660820575900</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Created modals and first templates">
+      <created>1660835594243</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1660835594243</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -130,6 +166,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Start the project" />
     <MESSAGE value="Start the project with home page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Start the project with home page" />
+    <MESSAGE value="Created modals and first templates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created modals and first templates" />
   </component>
 </project>

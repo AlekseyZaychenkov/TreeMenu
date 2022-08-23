@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import django
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,6 +27,22 @@ SECRET_KEY = 'django-insecure-i-l-@stmt*mk#-)cs#qxlka795bxkr7qz+@(wwhruq__rcfzh4
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console_handler': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        '': {
+            'level': 'INFO',
+            'handlers': ['console_handler'],
+        },
+    },
+
+}
 
 ALLOWED_HOSTS = []
 
@@ -33,10 +50,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'widget_tweaks',
-    'collector',
-    'statistics_collector',
 
+    # 'statistics_collector',
+    'collector.apps.CollectorConfig',
+    # 'collector',
+
+    'widget_tweaks',
+    # 'rest_framework',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -45,6 +65,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+
+
+    # 'collector.models',
+
 ]
 
 MIDDLEWARE = [
@@ -117,7 +141,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'ru'
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
@@ -141,3 +165,8 @@ STATICFILES_DIRS = [
 STATIC_ROOT = BASE_DIR / "static_root"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+FILE_UPLOAD_MAX_MEMORY_SIZE = 250 * 1024 * 1024
+
+
+# django.setup()

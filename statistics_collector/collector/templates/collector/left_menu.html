@@ -1,18 +1,29 @@
 {% extends 'collector/base.html' %} {% load widget_tweaks %} {% block content %}
 
 <div class="card">
-  <form method="post"> {% csrf_token %}
+
+      <div class="card" style="margin-bottom: 30px">
           <button type="button" class="btn-outline-primary" data-toggle="modal" data-target="#download_files_modal">
             <a href="#">Download files</a>
           </button>
+      </div>
 
+      <div class="card" style="margin-bottom: 30px">
+          <button type="button" disabled class="btn btn-outline-dark btn-lg">
+              Purchases in db: <span class="badge badge-light">{{number_of_purchases}}</span>
+              Installs in db: <span class="badge badge-light">{{number_of_installs}}</span>
+          </button>
+      </div>
+
+      <div class="card">
           <button type="button" class="btn-outline-primary" data-toggle="modal" data-target="#set_new_table_options">
             <a href="#">Create new table</a>
           </button>
-  </form>
+      </div>
+
 </div>
 
-{% block result_table %}
+{% block file_modals %}
 {% include 'collector/files_modals.html' %}
 {% endblock %}
 

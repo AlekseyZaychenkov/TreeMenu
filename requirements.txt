@@ -1,5 +1,6 @@
 asgiref==3.5.2
 attrs==22.1.0
+csv-reader==1.2.0
 Django==4.0.3
 django-widget-tweaks==1.4.8
 djangorestframework==3.12.4
@@ -15,3 +16,4 @@ pyparsing==3.0.9
 pytest==7.1.1
 sqlparse==0.4.2
 tomli==2.0.1
+
