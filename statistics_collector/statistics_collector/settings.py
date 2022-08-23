@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 import django
+import datetime
+from django.conf import settings
+from django.utils.timezone import make_aware
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -143,11 +147,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)

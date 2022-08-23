@@ -1,11 +1,13 @@
 from django import forms
 import logging
 
-from django.db.models import Sum, DecimalField
-from django.db.models.functions import Cast
+from django.db.models import Sum, DecimalField, Count
+import datetime
 
 from collector.csv_loader import PurchaseLoader, InstallLoader
-from collector.models import Platform, MediaSource, Purchase
+from collector.models import Platform, MediaSource, Purchase, Install, Result
+
+ALL_NAME = "all"
 
 log = logging.getLogger(__name__)
 
@@ -23,57 +25,66 @@ class DownloadFilesForm(forms.Form):
 
 
 class NewTableSettingsForm(forms.Form):
-
-    start_date = forms.DateTimeField(input_formats=["%d.%m.%Y %H:%M"], required=True)
-    end_date = forms.DateTimeField(input_formats=["%d.%m.%Y %H:%M"], required=True)
+    start_date = forms.DateTimeField(input_formats=["%d-%m-%Y %H:%M"], required=True)
+    end_date = forms.DateTimeField(input_formats=["%d-%m-%Y %H:%M"], required=True)
     platform = forms.ModelChoiceField(queryset=Platform.objects.all())
     media_source = forms.ModelChoiceField(queryset=MediaSource.objects.all())
 
     def calculate(self):
+        Result.objects.all().delete()
+        log.info(f"Started creating of new result table.")
         purchases = Purchase.objects.filter(
             event_time__range=[self.cleaned_data["start_date"], self.cleaned_data["end_date"]]
         )
-        purchases = Purchase.objects.all()
+        if self.cleaned_data["platform"].name != ALL_NAME:
+            platform = Platform.objects.get(platform_id=self.cleaned_data["platform"].platform_id)
+            purchases = purchases.filter(platform=platform)
+        if self.cleaned_data["platform"].name != ALL_NAME:
+            media_source = MediaSource.objects.get(media_source_id=self.cleaned_data["media_source"].media_source_id)
+            purchases = purchases.filter(media_source=media_source)
 
-        # if self.cleaned_data["platform"] != "all":
-        #     platform = Platform.objects.get(name=self.cleaned_data["platform"])
-        #     purchases = purchases.filter(
-        #         # event_time__range=[self.cleaned_data["start_date"], self.cleaned_data["end_date"]],
-        #         platform=platform)
-        #
-        # if self.cleaned_data["platform"] != "all":
-        #     media_source = MediaSource.objects.get(name=self.cleaned_data["media_source"])
-        #     purchases = purchases.filter(
-        #         # event_time__range=[self.cleaned_data["start_date"], self.cleaned_data["end_date"]],
-        #         mediasource=media_source)
-
-        log.info(f"purchases.values(): {purchases.values()}")
+        log.info(f"'{purchases.count()}' purchases from set time period, platform and media source were found.")
+        purchase_count = 0
         for row in purchases.values():
-            log.info(f"purchases row: {row}")
+            if Result.objects.filter(campaign_id=row['campaign_id']).exists():
+                result = Result.objects.filter(campaign_id=row['campaign_id']).get()
+                result.sum_revenue_by_campaign = sum([result.sum_revenue_by_campaign, row['event_revenue']])
+                result.sum_revenue_by_campaign_usd = sum([result.sum_revenue_by_campaign_usd, row['event_revenue_usd']])
+            else:
+                result = Result(campaign_id=row['campaign_id'],
+                                sum_install_by_campaign=0,
+                                sum_revenue_by_campaign=row['event_revenue'],
+                                sum_revenue_by_campaign_usd=row['event_revenue_usd']
+                                )
+            result.save()
+            purchase_count += 1
+            if purchase_count % 1000 == 0:
+                log.info(f"'{purchase_count}' purchases were analyzed.")
+        log.info(f"'{purchase_count}' purchases totally were analyzed.")
 
-        # purchases.group_by = ['campaign']
+        installs = Install.objects.filter(
+            event_time__range=[self.cleaned_data["start_date"], self.cleaned_data["end_date"]]
+        )
+        if self.cleaned_data["platform"].name != ALL_NAME:
+            platform = Platform.objects.get(platform_id=self.cleaned_data["platform"].platform_id)
+            installs = installs.filter(platform=platform)
+        if self.cleaned_data["platform"].name != ALL_NAME:
+            media_source = MediaSource.objects.get(media_source_id=self.cleaned_data["media_source"].media_source_id)
+            installs = installs.filter(media_source=media_source)
 
-        # purchases_sum = purchases.aggregate(Sum('campaign'))['column__sum']
-
-        # purchases_sum = purchases.aggregate(event_revenue=Sum('event_revenue'))
-
-        purchases_sum = purchases.values('campaign').order_by('campaign')\
-            .annotate(total_price=Sum('event_revenue'))\
-            .annotate(total_price_usd=Sum('event_revenue_usd'))
-
-        # purchases_event_revenue_sum = \
-        #     purchases.values('campaign').order_by('campaign').annotate(total_price=Sum('event_revenue'))
-
-        # for k, v in purchases_sum.items():
-        #     log.info(f"k: {k}   v:{v}")
-
-        log.info(f"purchases_sum: {purchases_sum}")
-        log.info(f"purchases_sum.values(): {purchases_sum.values()}")
-        log.info(f"len(purchases_sum): {len(purchases_sum)}")
-
-        for row in purchases_sum.values():
-            log.info(f"campaign: {row['campaign']} {row['total_price']} {row['total_price_usd']}")
-
-        # log.info(f"purchases_sum: {purchases_sum.count()}")
-
-        
+        log.info(f"'{installs.count()}' installs from set time period, platform and media source were found.")
+        install_count = 0
+        for row in installs.values():
+            if Result.objects.filter(campaign_id=row['campaign_id']).exists():
+                result = Result.objects.filter(campaign_id=row['campaign_id']).get()
+                result.sum_install_by_campaign += 1
+            else:
+                result = Result(campaign_id=row['campaign_id'],
+                                sum_install_by_campaign=1,
+                                sum_revenue_by_campaign=0,
+                                sum_revenue_by_campaign_usd=0)
+            result.save()
+            install_count += 1
+            if install_count % 1000 == 0:
+                log.info(f"'{install_count}' installs was analyzed.")
+        log.info(f"'{install_count}' installs totally were analyzed.")
