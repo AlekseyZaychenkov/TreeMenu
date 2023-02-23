@@ -1,0 +1,177 @@
+{% extends 'menu/base.html' %} {% load widget_tweaks %} {% block content %} {% load static %}
+
+
+
+{% load custom_tags %}
+
+<div class="row" style="height и overflow-y: scroll. ">
+    <div class="col-4">
+        <nav id="navbar-1" class="sticky-top">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <nav class="nav nav-pills flex-column">
+                {% for root_menu_item in root_menu_items %}
+<!--                    <nav class="ml-8">-->
+
+                        {% show_tree root_menu_item %}
+
+<!--                    </nav>-->
+
+
+
+<!--                    <a class="nav-link" href="#{{root_menu_item.url}}">{{root_menu_item.header}}</a>-->
+
+<!--                    {% for menu_item in menu_items %}-->
+<!--                        {% if menu_item.parent == root_menu_item %}-->
+<!--                            <nav class="nav nav-pills flex-column ml-3 my-1">-->
+<!--                                <a class="nav-link" href="#{{menu_item.url}}">{{menu_item.header}}</a>-->
+<!--                            </nav>-->
+<!--                        {% endif %}-->
+<!--                    {% endfor %}-->
+                {% endfor %}
+
+
+
+<!--                <nav class="nav nav-pills flex-column">-->
+<!--                    <a class="nav-link ml-3 my-1" href="#item-1-1">Item 1-1</a>-->
+<!--                    <a class="nav-link ml-3 my-1" href="#item-1-2">Item 1-2</a>-->
+<!--                </nav>-->
+<!--                <a class="nav-link" href="#item-2">Item 2</a>-->
+<!--                <a class="nav-link" href="#item-3">Item 3</a>-->
+<!--                <nav class="nav nav-pills flex-column">-->
+<!--                    <a class="nav-link ml-3 my-1" href="#item-3-1">Item 3-1</a>-->
+<!--                    <a class="nav-link ml-3 my-1" href="#item-3-2">Item 3-2</a>-->
+<!--                </nav>-->
+            </nav>
+        </nav>
+    </div>
+
+    <div class="col-8">
+        <div data-bs-spy="scroll" data-bs-target="#navbar-1" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
+            <div id="item-1">
+
+        <p>
+            regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er gtrwrewrgtrgtgdgfgm
+            h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwre
+            wrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er g
+            rgtrwrewrgtrgtgdgfgm h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n
+            regg re er g rgtrwrewrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n .regg re er grgtrwrewrgtrgtgdgfgm h n ..
+            regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er gtrwrewrgtrgtgdgfgm
+            h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwre
+            wrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er g
+            rgtrwrewrgtrgtgdgfgm h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n
+            regg re er g rgtrwrewrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n .regg re er grgtrwrewrgtrgtgdgfgm h n ..
+        </p>
+        <h5 id="item-1-1">Item 1-1</h5>
+        <p>
+            regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er gtrwrewrgtrgtgdgfgm
+            h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwre
+            wrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er g
+            rgtrwrewrgtrgtgdgfgm h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n
+            regg re er g rgtrwrewrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n .regg re er grgtrwrewrgtrgtgdgfgm h n ..
+            regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er gtrwrewrgtrgtgdgfgm
+            h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwre
+            wrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er g
+            rgtrwrewrgtrgtgdgfgm h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n
+            regg re er g rgtrwrewrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n .regg re er grgtrwrewrgtrgtgdgfgm h n ..
+        </p>
+        <h5 id="item-1-2">Item 1-2</h5>
+        <p>
+            regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er gtrwrewrgtrgtgdgfgm
+            h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwre
+            wrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er g
+            rgtrwrewrgtrgtgdgfgm h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n
+            regg re er g rgtrwrewrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n .regg re er grgtrwrewrgtrgtgdgfgm h n ..
+            regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er gtrwrewrgtrgtgdgfgm
+            h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwre
+            wrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er g
+            rgtrwrewrgtrgtgdgfgm h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n
+            regg re er g rgtrwrewrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n .regg re er grgtrwrewrgtrgtgdgfgm h n ..
+        </p>
+        <h4 id="item-2">Item 2</h4>
+        <p>
+            regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er gtrwrewrgtrgtgdgfgm
+            h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwre
+            wrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er g
+            rgtrwrewrgtrgtgdgfgm h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n
+            regg re er g rgtrwrewrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n .regg re er grgtrwrewrgtrgtgdgfgm h n ..
+            regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er gtrwrewrgtrgtgdgfgm
+            h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwre
+            wrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er g
+            rgtrwrewrgtrgtgdgfgm h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n
+            regg re er g rgtrwrewrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n .regg re er grgtrwrewrgtrgtgdgfgm h n ..
+        </p>
+        <h4 id="item-3">Item 3</h4>
+        <p>
+            regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er gtrwrewrgtrgtgdgfgm
+            h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwre
+            wrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er g
+            rgtrwrewrgtrgtgdgfgm h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n
+            regg re er g rgtrwrewrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n .regg re er grgtrwrewrgtrgtgdgfgm h n ..
+            regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er gtrwrewrgtrgtgdgfgm
+            h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwre
+            wrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er g
+            rgtrwrewrgtrgtgdgfgm h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n
+            regg re er g rgtrwrewrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n .regg re er grgtrwrewrgtrgtgdgfgm h n ..
+        </p>
+        <h5 id="item-3-1">Item 3-1</h5>
+        <p>
+            regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er gtrwrewrgtrgtgdgfgm
+            h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwre
+            wrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er g
+            rgtrwrewrgtrgtgdgfgm h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n
+            regg re er g rgtrwrewrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n .regg re er grgtrwrewrgtrgtgdgfgm h n ..
+            regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er gtrwrewrgtrgtgdgfgm
+            h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwre
+            wrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er g
+            rgtrwrewrgtrgtgdgfgm h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n
+            regg re er g rgtrwrewrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n .regg re er grgtrwrewrgtrgtgdgfgm h n ..
+        </p>
+        <h5 id="item-3-2">Item 3-2</h5>
+        <p>
+            regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er gtrwrewrgtrgtgdgfgm
+            h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwre
+            wrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er g
+            rgtrwrewrgtrgtgdgfgm h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n
+            regg re er g rgtrwrewrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n .regg re er grgtrwrewrgtrgtgdgfgm h n ..
+            regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er gtrwrewrgtrgtgdgfgm
+            h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwre
+            wrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n .regg re er g
+            rgtrwrewrgtrgtgdgfgm h n ..        regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h n
+            regg re er g rgtrwrewrgtrgtgdgfgm hn regg re er g rgtrwrewrgtrgtgdgfgm h n regg re er g rgtrwrewrgtrgtgdgfgm h
+            n .regg re er grgtrwrewrgtrgtgdgfgm h n ..
+        </p>
+    </div>
+    </div></div>
+
+
+
+
+
+{% endblock content %}

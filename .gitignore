@@ -1,4 +1,4 @@
 /.idea/
 /venv/
-/statistics_collector/db.sqlite3
-/statistics_collector/static_root/
+/tree_menu/db.sqlite3
+/tree_menu/static_root/
