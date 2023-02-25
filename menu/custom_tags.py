@@ -28,8 +28,5 @@ def show_item(menu_item: MenuItem, active_menu_item: MenuItem, nesting_depth: in
 
 @register.simple_tag()
 def show_tree(menu_item, active_menu_item):
-    text = show_item(menu_item, active_menu_item, 0, '')
+    text = show_item(menu_item, active_menu_item, 0, f"/{menu_item.menu.page.url}/{menu_item.menu.url}")
     return mark_safe(text)
-
-
-# @register.simple_tag(is_safe=True)

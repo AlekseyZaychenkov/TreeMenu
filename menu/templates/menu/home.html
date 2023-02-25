@@ -1,25 +1,47 @@
 {% extends 'menu/base.html' %} {% load widget_tweaks %} {% block content %} {% load static %}
-
-
-
 {% load custom_tags %}
 
-<div class="row" style="height и overflow-y: scroll. ">
+
+<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+    <div class="btn-group mr-2" role="group" aria-label="First group">
+        {% for page in pages %}
+            {% if page.url == active_page_url %}
+                <button type="button" class="btn btn-secondary active">
+                    <a href="{% url 'home_with_active_page' active_page_url=page.url %}">
+                        {{page.header}}
+                    </a>
+                </button>
+            {% else %}
+                <button type="button" class="btn btn-secondary">
+                    <a href="{% url 'home_with_active_page' active_page_url=page.url%}">
+                        {{page.header}}
+                    </a>
+                </button>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+
+<div class="row">
     <div class="col-4">
-        <nav id="navbar-1" class="sticky-top">
-            <a class="navbar-brand" href="{% url 'home' %}">Navbar</a>
-            <nav class="nav nav-pills flex-column">
-                {% for root_menu_item in root_menu_items %}
-                    {% show_tree root_menu_item active_menu_item %}
-                {% endfor %}
+        {% for menu, root_menu_items in menu_to_root_menu_items.items %}
+            <nav id="navbar-1">
+                <a class="navbar-brand" href="{% url 'home_with_active_page_and_menu' active_page_url=active_page_url active_menu_url=menu.url %}">{{menu.header}}</a>
+                <nav class="nav nav-pills flex-column">
+                    {% for root_menu_item in root_menu_items %}
+                        {% show_tree root_menu_item active_menu_item %}
+                    {% endfor %}
+                </nav>
             </nav>
-        </nav>
+            <hr class="hr">
+        {% endfor %}
     </div>
 
-    <div class="col-8">
-        <h3>{{active_menu_item.header}}</h3>
-        {{active_menu_item.text}}
-    </div>
+        <div class="col-8">
+            <h3>{{active_menu_item.header}}</h3>
+            {{active_menu_item.text}}
+        </div>
     </div>
 
 {% endblock content %}
