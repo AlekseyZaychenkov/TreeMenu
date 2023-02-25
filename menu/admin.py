@@ -9,3 +9,5 @@ class MenuItemAdmin(admin.ModelAdmin):
     @admin.display()
     def get_header_with_id(self, obj):
         return f"{obj.header} (id='{obj.id}')"
+    
+#     TODO: validation of unique url among children of same parent
